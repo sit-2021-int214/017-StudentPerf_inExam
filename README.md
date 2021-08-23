@@ -1,4 +1,4 @@
-# 017-HappinessCountriesin2019
+# 017-HappinessCountries2019
 Datasets from: [kaggle](https://www.kaggle.com/olivier973/happinest-world)
 
 ## Objective
