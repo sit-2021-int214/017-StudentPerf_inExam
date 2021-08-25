@@ -1,4 +1,4 @@
-# 017-HappinessCountries2019
+# 017-StudentPerf_inExam
 Datasets from: [kaggle](https://www.kaggle.com/spscientist/students-performance-in-exams)
 
 ## Objective
