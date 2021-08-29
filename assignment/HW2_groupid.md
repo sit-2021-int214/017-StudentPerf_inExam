@@ -11,9 +11,10 @@ meankg <- mean(cats$Bwt)
 meankg * 2.2046
 ```
 
-2.) 
+2.) From the cats table, the average of female cat heart weight in grams
 ```{R}
-Code here
+avg_hwt_f <- mean(cats [cats$sex == "F","Hwt"])
+print(avg_hwt_f)
 ```
 
 3.) 
@@ -32,9 +33,10 @@ survey$Smoke="Regul"
 View(survey)
 ```
 
-5.) 
+5.) Students who have abnormal heart rate (Normal is between 60 to 100 bpm ) are 12 people. 
 ```{R}
-Code here
+summary (survay$pulse<60) : Heart Rate Under 60 bpm = 10 
+summary (survay$pulse>100) : Heart Rate Over 100 = 2
 ```
 
 6.) 
