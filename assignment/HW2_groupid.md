@@ -17,9 +17,12 @@ avg_hwt_f <- mean(cats [cats$sex == "F","Hwt"])
 print(avg_hwt_f)
 ```
 
-3.) 
+3.) Total body weight of female cat is 110.9 kg and Total body weight of male cat is 281.3 kg
 ```{R}
-Code here
+s1 <- sum(cats[cats$Sex=="F", "Bwt"])
+s2 <- sum(cats[cats$Sex=="M", "Bwt"])
+cat("Total weight of female cat is ",s1)
+cat("Total weight of male cat is ",s2)
 ```
 
 ---
