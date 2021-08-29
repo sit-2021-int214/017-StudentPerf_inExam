@@ -42,9 +42,10 @@ summary (survay$pulse<60) : Heart Rate Under 60 bpm = 10
 summary (survay$pulse>100) : Heart Rate Over 100 = 2
 ```
 
-6.) 
+6.) In survay dataset have male = 118, female = 118 and unidentify = 1
 ```{R}
-Code here
+student <- factor(survay$Sex)
+summary(student)
 ```
 
 ---
