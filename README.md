@@ -18,9 +18,9 @@ To understand the influence of the parents background, test preparation etc on s
 
 ### Tools
 
-1. R Language
-2. R Studio Desktop
-3. Microsoft Excel
+- R Language
+- R Studio Desktop
+- Microsoft Excel
 
 ## Table of Contents
 
@@ -31,9 +31,9 @@ To understand the influence of the parents background, test preparation etc on s
 
 ### Important Files in Repository
 
-1. [StudentPerf.R](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/StudentPerf.R): Exploratory Data Analysis
-2. [StudentsPerformance_Original.csv](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/StudentsPerformance_Original.csv): Original Dataset
-3. [StudentsPerformance_Clean.csv](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/StudentsPerformance_Clean.csv): Cleaned Dataset
+- [StudentPerf.R](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/StudentPerf.R): Exploratory Data Analysis
+- [StudentsPerformance_Original.csv](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/StudentsPerformance_Original.csv): Original Dataset
+- [StudentsPerformance_Clean.csv](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/StudentsPerformance_Clean.csv): Cleaned Dataset
 
 ### References
 
