@@ -1,4 +1,4 @@
-Gender,Group_Name,Parental_Level_of_Education,Lunch_Fee,Test_Preparation_Course,Math_Score,Reading_Score,Writing_Score
+Gender,Group,Parental_Level_of_Education,Lunch_Fee,Test_Preparation_Course,Math_Score,Reading_Score,Writing_Score
 female,group B,bachelor's degree,standard,none,72,72,74
 female,group C,college,standard,completed,69,90,88
 female,group B,master's degree,standard,none,90,95,93
