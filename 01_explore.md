@@ -54,13 +54,13 @@ StudentPerf <- StudentPerf %>% rename(Writing_Score='writing.score')
 
 นักศึกษาเพศใดจบปริญญาตรีมากกว่ากัน
 
-```{R}
+```R
 
 ```
 
 ผลลัพธ์
 
-```{R}
+```R
 
 ```
 
@@ -68,13 +68,13 @@ StudentPerf <- StudentPerf %>% rename(Writing_Score='writing.score')
 
 คนที่ทำคะแนนการสอบทั้งคณิตศาสตร์ การอ่าน และการเขียนได้ 90 คะแนนขึ้นไปมีกี่คน
 
-```{R}
+```R
 
 ```
 
 ผลลัพธ์
 
-```{R}
+```R
 
 ```
 
@@ -82,13 +82,13 @@ StudentPerf <- StudentPerf %>% rename(Writing_Score='writing.score')
 
 เพศไหนทำคะแนนได้มากกว่ากัน
 
-```{R}
+```R
 
 ```
 
 ผลลัพธ์
 
-```{R}
+```R
 
 ```
 
@@ -96,13 +96,13 @@ StudentPerf <- StudentPerf %>% rename(Writing_Score='writing.score')
 
 คะแนนเฉลี่ยในแต่ละวิชาของชายหรือหญิงมีค่ามากน้อยต่างกันเพียงใด
 
-```{R}
+```R
 
 ```
 
 ผลลัพธ์
 
-```{R}
+```R
 
 ```
 
@@ -110,7 +110,7 @@ StudentPerf <- StudentPerf %>% rename(Writing_Score='writing.score')
 
 ค่าเฉลี่ยการทั้งสอบทั้งคณิตศาสตร์ การอ่าน และการเขียน มีค่าเท่าไร
 
-```{R}
+```R
 StudentPerf %>%
   select(Math_Score, Reading_Score, Writing_Score) %>%
   summarise(MATH_AVG = mean(Math_Score),
@@ -120,7 +120,7 @@ StudentPerf %>%
 
 ผลลัพธ์
 
-```{R}
+```R
 # A tibble: 1 x 3
   MATH_AVG READING_AVG WRITING_AVG
      <dbl>       <dbl>       <dbl>
@@ -131,7 +131,7 @@ StudentPerf %>%
 
 ให้หาคนที่ทำคะแนนได้สูงสุดได้เต็ม 100 คะแนน โดยแสดงข้อมูลคอลัมน์ของ เพศ กลุ่ม และคะแนนที่ทำได้ทั้งคณิตศาสตร์ การอ่าน และการเขียน
 
-```{R}
+```R
 StudentPerf %>%
   select(Gender,
          Group,
@@ -145,7 +145,7 @@ StudentPerf %>%
 
 ผลลัพธ์
 
-```{R}
+```R
 # A tibble: 3 x 5
   Gender Group   Math_Score Reading_Score Writing_Score
   <chr>  <chr>        <int>         <int>         <int>
