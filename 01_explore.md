@@ -4,7 +4,7 @@ Dataset from [Students Performance in Exams](https://github.com/sit-2021-int214/
 
 ## Library and Dataset
 
-```{R}
+```R
 # Pre-requisite
 install.packages("DescTools")
 install.packages("MASS")
@@ -27,14 +27,14 @@ StudentPerf <- read.csv("https://raw.githubusercontent.com/sit-2021-int214/017-S
 
 ## Change to Tibble
 
-```{R}
+```R
 StudentPerf <- as_tibble(StudentPerf)
 glimpse(StudentPerf)
 ```
 
 ## Cleaning Dataset
 
-```{R}
+```R
 # Cleaning Dataset
 StudentPerf <- StudentPerf %>% rename(Gender='gender')
 StudentPerf <- StudentPerf %>% rename(Group='race.ethnicity')
