@@ -52,7 +52,7 @@ StudentPerf <- StudentPerf %>% rename(Writing_Score='writing.score')
 
 ### ข้อ 1
 
-โจทย์ (ใส่โจทย์ที่เราตั้ง)
+นักศึกษาเพศใดจบปริญญาตรีมากกว่ากัน
 
 ```{R}
 
@@ -66,7 +66,7 @@ StudentPerf <- StudentPerf %>% rename(Writing_Score='writing.score')
 
 ### ข้อ 2
 
-โจทย์ (ใส่โจทย์ที่เราตั้ง)
+คนที่ทำคะแนนการสอบทั้งคณิตศาสตร์ การอ่าน และการเขียนได้ 90 คะแนนขึ้นไปมีกี่คน
 
 ```{R}
 
@@ -80,7 +80,7 @@ StudentPerf <- StudentPerf %>% rename(Writing_Score='writing.score')
 
 ### ข้อ 3
 
-โจทย์ (ใส่โจทย์ที่เราตั้ง)
+เพศไหนทำคะแนนได้มากกว่ากัน
 
 ```{R}
 
@@ -94,7 +94,7 @@ StudentPerf <- StudentPerf %>% rename(Writing_Score='writing.score')
 
 ### ข้อ 4
 
-โจทย์ (ใส่โจทย์ที่เราตั้ง)
+คะแนนเฉลี่ยในแต่ละวิชาของชายหรือหญิงมีค่ามากน้อยต่างกันเพียงใด
 
 ```{R}
 
@@ -108,28 +108,48 @@ StudentPerf <- StudentPerf %>% rename(Writing_Score='writing.score')
 
 ### ข้อ 5
 
-โจทย์ (ใส่โจทย์ที่เราตั้ง)
+ค่าเฉลี่ยการทั้งสอบทั้งคณิตศาสตร์ การอ่าน และการเขียน มีค่าเท่าไร
 
 ```{R}
-
+StudentPerf %>%
+  select(Math_Score, Reading_Score, Writing_Score) %>%
+  summarise(MATH_AVG = mean(Math_Score),
+            READING_AVG = mean(Reading_Score),
+            WRITING_AVG = mean(Writing_Score))
 ```
 
 ผลลัพธ์
 
 ```{R}
-
+# A tibble: 1 x 3
+  MATH_AVG READING_AVG WRITING_AVG
+     <dbl>       <dbl>       <dbl>
+1     66.1        69.2        68.1
 ```
 
 ### ข้อ 6
 
-โจทย์ (ใส่โจทย์ที่เราตั้ง)
+ให้หาคนที่ทำคะแนนได้สูงสุดได้เต็ม 100 คะแนน โดยแสดงข้อมูลคอลัมน์ของ เพศ กลุ่ม และคะแนนที่ทำได้ทั้งคณิตศาสตร์ การอ่าน และการเขียน
 
 ```{R}
-
+StudentPerf %>%
+  select(Gender,
+         Group,
+         Math_Score,
+         Reading_Score,
+         Writing_Score) %>%
+  filter(StudentPerf$Math_Score == max(StudentPerf$Math_Score),
+         StudentPerf$Reading_Score == max(StudentPerf$Reading_Score),
+         StudentPerf$Writing_Score == max(StudentPerf$Writing_Score))
 ```
 
 ผลลัพธ์
 
 ```{R}
-
+# A tibble: 3 x 5
+  Gender Group   Math_Score Reading_Score Writing_Score
+  <chr>  <chr>        <int>         <int>         <int>
+1 female group E        100           100           100
+2 male   group E        100           100           100
+3 female group E        100           100           100
 ```
