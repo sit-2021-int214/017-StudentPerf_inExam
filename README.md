@@ -1,7 +1,8 @@
 # 017-StudentPerf_inExam
+
 Datasets from: [kaggle](https://www.kaggle.com/spscientist/students-performance-in-exams)
 
-### About Dataset
+## Purpose
 
 To understand the influence of the parents background, test preparation etc on students performance.
 
@@ -23,7 +24,7 @@ To understand the influence of the parents background, test preparation etc on s
 3. เพศไหนทำคะแนนได้มากกว่ากัน
 4. คะแนนเฉลี่ยในแต่ละวิชาของชายหรือหญิงมีค่ามากน้อยต่างกันเพียงใด
 5. ค่าเฉลี่ยการทั้งสอบทั้งคณิตศาสตร์ การอ่าน และการเขียน มีค่าเท่าไร
-6. คะแนนสูงสุดและต่ำสุดของแต่ละการสอบทั้งคณิตศาสตร์ การอ่าน และการเขียน มีค่าเท่าไร
+6. ให้หาคนที่ทำคะแนนได้สูงสุดได้เต็ม 100 คะแนน โดยแสดงข้อมูลคอลัมน์ของ เพศ กลุ่ม และคะแนนที่ทำได้ทั้งคณิตศาสตร์ การอ่าน และการเขียน
 
 ### Tools
 
@@ -62,5 +63,6 @@ _Work in progress_
 | 3   | นายปาณัสม์ อ่อนมั่นคง | 63130500080 |
 
 ### Instructor
+
 - ATCHARA TRAN-U-RAIKUL
 - JATAWAT XIE (Git: [safesit23](https://github.com/safesit23))
