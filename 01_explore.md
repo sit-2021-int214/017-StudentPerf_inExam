@@ -1,6 +1,6 @@
-# Dataset Explore of Students Performance in Exams
+# Explore of Students Performance in Exams
 
-Dataset from [Students Performance in Exams](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/StudentsPerformance_Original.csv)
+Dataset: [Students Performance in Exams (Original)](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/StudentsPerformance_Original.csv)
 
 ## Library and Dataset
 
@@ -44,6 +44,9 @@ StudentPerf <- StudentPerf %>% rename(Test_Preparation_Course='test.preparation.
 StudentPerf <- StudentPerf %>% rename(Math_Score='math.score')
 StudentPerf <- StudentPerf %>% rename(Reading_Score='reading.score')
 StudentPerf <- StudentPerf %>% rename(Writing_Score='writing.score')
+
+# Create Cleaning Dataset
+write_csv(StudentPerf, file = "StudentsPerformance_Clean.csv")
 ```
 
 ---

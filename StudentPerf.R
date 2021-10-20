@@ -31,6 +31,9 @@ StudentPerf <- StudentPerf %>% rename(Math_Score='math.score')
 StudentPerf <- StudentPerf %>% rename(Reading_Score='reading.score')
 StudentPerf <- StudentPerf %>% rename(Writing_Score='writing.score')
 
+# Create Cleaning Dataset
+write_csv(StudentPerf, file = "StudentsPerformance_Clean.csv")
+
 # Define Questions
 
 # ข้อ 1

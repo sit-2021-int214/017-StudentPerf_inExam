@@ -30,7 +30,6 @@ To understand the influence of the parents background, test preparation etc on s
 
 - R Language
 - R Studio Desktop
-- Microsoft Excel
 
 ## Table of Contents
 
