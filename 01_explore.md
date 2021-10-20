@@ -1,14 +1,14 @@
-# Netflix Original Films & IMDB Scores Dataset
+# Dataset Explore of Students Performance in Exams
 
 Dataset from [Students Performance in Exams](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/StudentsPerformance_Original.csv)
 
-## Loading library and dataset
+## Library and Dataset
 
 ```{R}
 
 ```
 
-## Change to tibble
+## Change to Tibble
 
 ```{R}
 
