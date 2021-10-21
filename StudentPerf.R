@@ -62,6 +62,6 @@ StudentPerf %>%
          Math_Score,
          Reading_Score,
          Writing_Score) %>%
-  filter(StudentPerf$Math_Score == max(StudentPerf$Math_Score),
-         StudentPerf$Reading_Score == max(StudentPerf$Reading_Score),
+  filter(StudentPerf$Math_Score == max(StudentPerf$Math_Score) &
+         StudentPerf$Reading_Score == max(StudentPerf$Reading_Score) &
          StudentPerf$Writing_Score == max(StudentPerf$Writing_Score))
