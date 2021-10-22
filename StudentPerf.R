@@ -1,10 +1,10 @@
 # Pre-requisites
-install.packages("DescTools")
-install.packages("MASS")
-install.packages("dplyr")
-install.packages("readr")
-install.packages("assertive")
-install.packages("stringr")
+install.packages("DescTools") # Descriptive statistics
+install.packages("MASS")      # Functions and datasets
+install.packages("dplyr")     # Data manipulation
+install.packages("readr")     # A fast and friendly way to read rectangular data
+install.packages("assertive") # Readable check functions to ensure code integrity
+install.packages("stringr")   # Character manipulation
 
 # Use libraries
 library(DescTools)
@@ -16,10 +16,6 @@ library(stringr)
 
 # Dataset
 StudentPerf <- read.csv("https://raw.githubusercontent.com/sit-2021-int214/017-StudentPerf_inExam/main/StudentsPerformance_Original.csv")
-
-# Change to Tibble
-StudentPerf <- as_tibble(StudentPerf)
-glimpse(StudentPerf)
 
 # Cleaning Dataset
 StudentPerf <- StudentPerf %>% rename(Gender='gender')
@@ -33,6 +29,13 @@ StudentPerf <- StudentPerf %>% rename(Writing_Score='writing.score')
 
 # Create Cleaning Dataset
 write_csv(StudentPerf, file = "StudentsPerformance_Clean.csv")
+
+# Change to Tibble
+StudentPerf <- as_tibble(StudentPerf)
+
+# Result of Cleaned Dataset
+View(StudentPerf)
+glimpse(StudentPerf)
 
 # Define Questions
 

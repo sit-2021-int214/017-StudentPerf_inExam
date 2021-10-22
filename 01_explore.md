@@ -6,12 +6,12 @@ Dataset: [Students Performance in Exams (Original)](https://github.com/sit-2021-
 
 ```R
 # Pre-requisite
-install.packages("DescTools")
-install.packages("MASS")
-install.packages("dplyr")
-install.packages("readr")
-install.packages("assertive")
-install.packages("stringr")
+install.packages("DescTools") # Descriptive statistics
+install.packages("MASS")      # Functions and datasets
+install.packages("dplyr")     # Data manipulation
+install.packages("readr")     # A fast and friendly way to read rectangular data
+install.packages("assertive") # Readable check functions to ensure code integrity
+install.packages("stringr")   # Character manipulation
 
 # Use libraries
 library(DescTools)
@@ -21,15 +21,8 @@ library(readr)
 library(assertive)
 library(stringr)
 
-# Dataset
+# Import dataset
 StudentPerf <- read.csv("https://raw.githubusercontent.com/sit-2021-int214/017-StudentPerf_inExam/main/StudentsPerformance_Original.csv")
-```
-
-## Change to Tibble
-
-```R
-StudentPerf <- as_tibble(StudentPerf)
-glimpse(StudentPerf)
 ```
 
 ## Cleaning Dataset
@@ -49,7 +42,45 @@ StudentPerf <- StudentPerf %>% rename(Writing_Score='writing.score')
 write_csv(StudentPerf, file = "StudentsPerformance_Clean.csv")
 ```
 
----
+### ความหมายของชื่อคอลัมน์ที่ได้ทำการ Clean ชุดข้อมูลแล้ว
+
+**Gender:** เพศ\
+**Group:** กลุ่ม\
+**Parental Level of Education:** ระดับการศึกษาผู้ปกครองของนักเรียน\
+**Lunch:** ค่าอาหารกลางวันที่อิงจากรายได้ครอบครัว (Ref: [Discussion 194170](https://www.kaggle.com/spscientist/students-performance-in-exams/discussion/194170))\
+**Test Preparation Course:** การเตรียมสอบก่อนสอบสนามจริง\
+**Math Score:** คะแนนคณิตศาสตร์\
+**Reading Score:** คะแนนการอ่าน\
+**Writing Score:** คะแนนการเขียน
+
+## Change to Tibble
+
+```R
+StudentPerf <- as_tibble(StudentPerf)
+```
+
+## Result of Cleaned Dataset
+
+ผลลัพธ์ที่ใช้คำสั่ง `View(StudentPerf)`
+
+![Cleaned Dataset](images/ViewStudentPerf-Result.png)
+
+ผลลัพธ์ที่ใช้คำสั่ง `glimpse(StudentPerf)`
+
+```R
+Rows: 1,000
+Columns: 8
+$ Gender                      <chr> "female", "female", "female", "male", "male"~
+$ Group                       <chr> "group B", "group C", "group B", "group A", ~
+$ Parental_Level_of_Education <chr> "bachelor's degree", "some college", "master~
+$ Lunch                       <chr> "standard", "standard", "standard", "free/re~
+$ Test_Preparation_Course     <chr> "none", "completed", "none", "none", "none",~
+$ Math_Score                  <int> 72, 69, 90, 47, 76, 71, 88, 40, 64, 38, 58, ~
+$ Reading_Score               <int> 72, 90, 95, 57, 78, 83, 95, 43, 64, 60, 54, ~
+$ Writing_Score               <int> 74, 88, 93, 44, 75, 78, 92, 39, 67, 50, 52, ~
+```
+
+-----------------------------------------------------------------------------------------------------------------------------------------
 
 ## Define Questions
 
@@ -130,6 +161,10 @@ StudentPerf %>%
 1     66.1        69.2        68.1
 ```
 
+คะแนนเฉลี่ย Math: 66.1 คะแนน\
+คะแนนเฉลี่ย Reading: 69.2 คะแนน\
+คะแนนเฉลี่ย Writing: 68.1 คะแนน
+
 ### ข้อ 6
 
 ให้หาคนที่ทำคะแนนได้สูงสุด (ได้เต็ม 100 คะแนน) โดยแสดงข้อมูลคอลัมน์ของ เพศ กลุ่ม และคะแนนที่ทำได้ทั้งคณิตศาสตร์ การอ่าน และการเขียน
@@ -156,3 +191,7 @@ StudentPerf %>%
 2 male   group E        100           100           100
 3 female group E        100           100           100
 ```
+
+1. เพศหญิง กลุ่ม E ทำคะแนน Math, Reading และ Writing ได้ 100 คะแนนเต็ม
+2. เพศชาย กลุ่ม E ทำคะแนน Math, Reading และ Writing ได้ 100 คะแนนเต็ม
+3. เพศหญิง กลุ่ม E ทำคะแนน Math, Reading และ Writing ได้ 100 คะแนนเต็ม
