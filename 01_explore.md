@@ -157,14 +157,36 @@ StudentPerf %>%
 เพศชายหรือเพศหญิงทำคะแนนเต็มคณิตศาสตร์ การอ่าน และการเขียน ได้มากกว่ากัน
 
 ```R
+StudentPerf %>%
+  select(Gender,
+         Math_Score,
+         Reading_Score,
+         Writing_Score) %>%
+  filter(StudentPerf$Math_Score == max(StudentPerf$Math_Score) &
+           StudentPerf$Reading_Score == max(StudentPerf$Reading_Score) &
+           StudentPerf$Writing_Score == max(StudentPerf$Writing_Score))
 
 ```
 
 ผลลัพธ์
 
 ```R
+StudentPerf %>%
++   select(Gender,
++          Math_Score,
++          Reading_Score,
++          Writing_Score) %>%
++   filter(StudentPerf$Math_Score == max(StudentPerf$Math_Score) &
++            StudentPerf$Reading_Score == max(StudentPerf$Reading_Score) &
++            StudentPerf$Writing_Score == max(StudentPerf$Writing_Score))
+  Gender Math_Score Reading_Score Writing_Score
+1 female        100           100           100
+2   male        100           100           100
+3 female        100           100           100
+> 
 
 ```
+จาก  Out put แสดงให้เห็นว่า มีเพศหญิงที่ทำคะแนนเต็มทั้ง3วิชา มี2 คน ส่วนเพศชายที่ทำคะแนนเต็มทั้ง3วิชา มี1 คน สรุปคือ เพศหญิงทำคะแนนได้มากกว่าเพศชาย
 
 ### ข้อ 3
 
