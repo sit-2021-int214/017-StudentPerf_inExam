@@ -193,23 +193,23 @@ StudentPerf %>%
 
 ```R
 StudentPerf %>% 
-+   select(Gender,
-+          Math_Score)%>% 
-+   filter(Gender=="male")%>%
-+   select(Math_Score)%>%
-+   summarise(MATH_AVG = mean(Math_Score))
+   select(Gender,
+          Math_Score)%>% 
+   filter(Gender=="male")%>%
+   select(Math_Score)%>%
+   summarise(MATH_AVG = mean(Math_Score))
   MATH_AVG
 1 68.72822
-> 
-> StudentPerf %>% 
-+   select(Gender,
-+          Math_Score)%>% 
-+   filter(Gender=="female")%>%
-+   select(Math_Score)%>%
-+   summarise(MATH_AVG = mean(Math_Score))
+ 
+ StudentPerf %>% 
+   select(Gender,
+          Math_Score)%>% 
+   filter(Gender=="female")%>%
+   select(Math_Score)%>%
+   summarise(MATH_AVG = mean(Math_Score))
   MATH_AVG
 1  63.6332
-> 
+ 
 
 ```
 จาก out put แสดงให้เห็นว่าคะแนนเฉลี่ยคณิตศาสตร์ของเพศชายมากกว่าเพศหญิง
