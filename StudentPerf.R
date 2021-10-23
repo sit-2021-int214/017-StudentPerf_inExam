@@ -26,6 +26,7 @@ StudentPerf <- StudentPerf %>% rename(Test_Preparation_Course='test.preparation.
 StudentPerf <- StudentPerf %>% rename(Math_Score='math.score')
 StudentPerf <- StudentPerf %>% rename(Reading_Score='reading.score')
 StudentPerf <- StudentPerf %>% rename(Writing_Score='writing.score')
+StudentPerf <- StudentPerf %>% arrange(Group) # Ascending order
 
 # Create Cleaning Dataset
 write_csv(StudentPerf, file = "StudentsPerformance_Clean.csv")
