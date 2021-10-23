@@ -167,12 +167,13 @@ StudentPerf %>%
 
 ### ข้อ 6
 
-ให้หาคนที่ทำคะแนนได้สูงสุด (ได้เต็ม 100 คะแนน) โดยแสดงข้อมูลคอลัมน์ของ เพศ กลุ่ม และคะแนนที่ทำได้ทั้งคณิตศาสตร์ การอ่าน และการเขียน
+ให้หาคนที่ทำคะแนนได้สูงสุด (ได้เต็ม 100 คะแนน) โดยแสดงข้อมูลคอลัมน์ของ เพศ กลุ่ม ระดับการศึกษาของผู้ปกครอง และคะแนนที่ทำได้ทั้งคณิตศาสตร์ การอ่าน และการเขียน
 
 ```R
 StudentPerf %>%
   select(Gender,
          Group,
+         Parental_Level_of_Education,
          Math_Score,
          Reading_Score,
          Writing_Score) %>%
@@ -184,14 +185,14 @@ StudentPerf %>%
 ผลลัพธ์
 
 ```R
-# A tibble: 3 x 5
-  Gender Group   Math_Score Reading_Score Writing_Score
-  <chr>  <chr>        <int>         <int>         <int>
-1 female group E        100           100           100
-2 male   group E        100           100           100
-3 female group E        100           100           100
+# A tibble: 3 x 6
+  Gender Group   Parental_Level_of_Education Math_Score Reading_Score Writing_Score
+  <chr>  <chr>   <chr>                            <int>         <int>         <int>
+1 female group E bachelor's degree                  100           100           100
+2 male   group E bachelor's degree                  100           100           100
+3 female group E associate's degree                 100           100           100
 ```
 
-1. เพศหญิง กลุ่ม E ทำคะแนน Math, Reading และ Writing ได้ 100 คะแนนเต็ม
-2. เพศชาย กลุ่ม E ทำคะแนน Math, Reading และ Writing ได้ 100 คะแนนเต็ม
-3. เพศหญิง กลุ่ม E ทำคะแนน Math, Reading และ Writing ได้ 100 คะแนนเต็ม
+1. เพศหญิง กลุ่ม E ระดับการศึกษาของผู้ปกครอง: ปริญญาตรี; ทำคะแนน Math, Reading และ Writing ได้ 100 คะแนนเต็ม
+2. เพศชาย กลุ่ม E ระดับการศึกษาของผู้ปกครอง: ปริญญาตรี; ทำคะแนน Math, Reading และ Writing ได้ 100 คะแนนเต็ม
+3. เพศหญิง กลุ่ม E ระดับการศึกษาของผู้ปกครอง: อนุปริญญา; ทำคะแนน Math, Reading และ Writing ได้ 100 คะแนนเต็ม

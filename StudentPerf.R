@@ -62,6 +62,7 @@ StudentPerf %>%
 StudentPerf %>%
   select(Gender,
          Group,
+         Parental_Level_of_Education,
          Math_Score,
          Reading_Score,
          Writing_Score) %>%
