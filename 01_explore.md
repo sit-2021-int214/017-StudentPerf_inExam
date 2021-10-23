@@ -216,17 +216,45 @@ StudentPerf %>%
 
 ### ข้อ 4
 
-คะแนนเฉลี่ยในแต่ละวิชาของชายหรือหญิงมีค่ามากน้อยต่างกันเพียงใด
+คะแนนเฉลี่ยในแต่ละวิชาของนักเรียนชายหรือนักเรียนหญิงมีค่ามากน้อยต่างกันเพียงใด
 
 ```R
+### หาคะแนนเฉลี่ยในแต่ละวิชาของนักเรียนเพศชาย
+StudentPerf%>%
+  select(Gender, Math_Score, Reading_Score, Writing_Score)%>%
+  filter(StudentPerf$Gender=='male')%>%
+  summarise(Math_AVG = mean(Math_Score), Reading_AVG = mean(Reading_Score), Writing_AVG = mean(Writing_Score))
+  
+### หาคะแนนเฉลี่ยในแต่ละวิชาของนักเรียนเพศหญิง
+StudentPerf%>%
+  select(Gender, Math_Score, Reading_Score, Writing_Score)%>%
+  filter(StudentPerf$Gender=='female')%>%
+  summarise(Math_AVG = mean(Math_Score), Reading_AVG = mean(Reading_Score), Writing_AVG = mean(Writing_Score))
 
 ```
 
 ผลลัพธ์
 
 ```R
+### คะแนนเฉลี่ยในแต่ละวิชาของนักเรียนเพศชาย
+
+# A tibble: 1 x 3
+  Math_AVG Reading_AVG Writing_AVG
+     <dbl>       <dbl>       <dbl>
+1     68.7        65.5        63.3
+
+### คะแนนเฉลี่ยในแต่ละวิชาของนักเรียนเพศหญิง
+
+# A tibble: 1 x 3
+  Math_AVG Reading_AVG Writing_AVG
+     <dbl>       <dbl>       <dbl>
+1     63.6        72.6        72.5
 
 ```
+จาก Output สรุปได้ว่า นักเรียนชายและนักเรียนหญิงมีคะแนนเฉลี่ยแต่ละวิชา ดังนี้
+วิชาคณิตศาสตร์ นักเรียนชายมีคะแนนเฉลี่ยที่ 68.7 นักเรียนชายมีคะแนนเฉลี่ยที่ 63.6
+วิชาการอ่าน นักเรียนชายมีคะแนนเฉลี่ยที่ 65.5 นักเรียนชายมีคะแนนเฉลี่ยที่ 72.6
+วิชาการเขียน นักเรียนชายมีคะแนนเฉลี่ยที่ 63.3 นักเรียนชายมีคะแนนเฉลี่ยที่ 72.5
 
 ### ข้อ 5
 
