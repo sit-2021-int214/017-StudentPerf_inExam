@@ -154,9 +154,13 @@ StudentPerf %>%
 
 ### ข้อ 2
 
-มีกี่คนที่ทำคะแนนการอ่านได้คะแนนเท่ากัน
+คะแนนน้อยที่สุดของวิชา Writing คือกี่คะแนน
 
 ```R
+StudentPerf %>%
+  select (Writing_Score) %>%
+filter(StudentPerf$Writing_Score == min(StudentPerf$Writing_Score))
+
 
 
 ```
@@ -164,9 +168,14 @@ StudentPerf %>%
 ผลลัพธ์
 
 ```R
+StudentPerf %>%
+   select (Writing_Score) %>%
+ filter(StudentPerf$Writing_Score == min(StudentPerf$Writing_Score))
+  Writing_Score
+1            10
 
 ```
-
+คะแนนน้อยที่สุดของวิชา Writing คือ 10คะแนน
 
 ### ข้อ 3
 
