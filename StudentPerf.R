@@ -45,7 +45,14 @@ glimpse(StudentPerf)
 # Code here
 
 # ข้อ 2
-# Code here
+StudentPerf %>%
+  select(Gender,
+         Math_Score,
+         Reading_Score,
+         Writing_Score) %>%
+  filter(StudentPerf$Math_Score == max(StudentPerf$Math_Score) &
+           StudentPerf$Reading_Score == max(StudentPerf$Reading_Score) &
+           StudentPerf$Writing_Score == max(StudentPerf$Writing_Score))
 
 # ข้อ 3
 # Code here
