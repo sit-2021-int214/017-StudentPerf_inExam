@@ -71,14 +71,14 @@ StudentPerf <- as_tibble(StudentPerf)
 ```R
 Rows: 1,000
 Columns: 8
-$ Gender                      <chr> "female", "female", "female", "male", "male"~
-$ Group                       <chr> "group B", "group C", "group B", "group A", ~
-$ Parental_Level_of_Education <chr> "bachelor's degree", "some college", "master~
-$ Lunch                       <chr> "standard", "standard", "standard", "free/re~
-$ Test_Preparation_Course     <chr> "none", "completed", "none", "none", "none",~
-$ Math_Score                  <int> 72, 69, 90, 47, 76, 71, 88, 40, 64, 38, 58, ~
-$ Reading_Score               <int> 72, 90, 95, 57, 78, 83, 95, 43, 64, 60, 54, ~
-$ Writing_Score               <int> 74, 88, 93, 44, 75, 78, 92, 39, 67, 50, 52, ~
+$ Gender                      <chr> "male", "male", "female", "male", "female", "male", "male"~
+$ Group                       <chr> "group A", "group A", "group A", "group A", "group A", "gr~
+$ Parental_Level_of_Education <chr> "associate's degree", "some college", "master's degree", "~
+$ Lunch                       <chr> "free/reduced", "standard", "standard", "free/reduced", "s~
+$ Test_Preparation_Course     <chr> "none", "completed", "none", "none", "completed", "none", ~
+$ Math_Score                  <int> 47, 78, 50, 73, 55, 39, 62, 41, 80, 50, 58, 54, 51, 57, 62~
+$ Reading_Score               <int> 57, 72, 53, 74, 65, 39, 61, 51, 78, 47, 70, 53, 49, 43, 67~
+$ Writing_Score               <int> 44, 70, 58, 72, 62, 34, 55, 48, 81, 54, 67, 47, 51, 47, 69~
 ```
 
 -----------------------------------------------------------------------------------------------------------------------------------------
