@@ -58,6 +58,26 @@ write_csv(StudentPerf, file = "StudentsPerformance_Clean.csv")
 
 ```R
 StudentPerf <- as_tibble(StudentPerf)
+StudentPerf # or "as_tibble(StudentPerf)" to show result
+```
+
+ผลลัพธ์ที่ได้แปลงเป็น Tibble แล้ว
+
+```R
+# A tibble: 1,000 x 8
+   Gender Group   Parental_Level_~ Lunch Test_Preparatio~ Math_Score Reading_Score Writing_Score
+   <chr>  <chr>   <chr>            <chr> <chr>                 <int>         <int>         <int>
+ 1 male   group A associate's deg~ free~ none                     47            57            44
+ 2 male   group A some college     stan~ completed                78            72            70
+ 3 female group A master's degree  stan~ none                     50            53            58
+ 4 male   group A master's degree  free~ none                     73            74            72
+ 5 female group A associate's deg~ stan~ completed                55            65            62
+ 6 male   group A some high school free~ none                     39            39            34
+ 7 male   group A associate's deg~ free~ none                     62            61            55
+ 8 female group A associate's deg~ free~ none                     41            51            48
+ 9 male   group A bachelor's degr~ stan~ completed                80            78            81
+10 male   group A some college     free~ completed                50            47            54
+# ... with 990 more rows
 ```
 
 ## Result of Cleaned Dataset

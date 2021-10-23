@@ -33,6 +33,7 @@ write_csv(StudentPerf, file = "StudentsPerformance_Clean.csv")
 
 # Change to Tibble
 StudentPerf <- as_tibble(StudentPerf)
+StudentPerf # or "as_tibble(StudentPerf)" to show result
 
 # Result of Cleaned Dataset
 View(StudentPerf)
