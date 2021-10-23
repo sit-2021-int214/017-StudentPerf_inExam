@@ -55,6 +55,10 @@ StudentPerf %>%
 
 
 # ข้อ 2
+StudentPerf %>%
+  select (Writing_Score) %>%
+filter(StudentPerf$Writing_Score == min(StudentPerf$Writing_Score))
+
 
 
 # ข้อ 3
