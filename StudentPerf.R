@@ -55,7 +55,19 @@ StudentPerf %>%
            StudentPerf$Writing_Score == max(StudentPerf$Writing_Score))
 
 # ข้อ 3
-# Code here
+tudentPerf %>% 
+  select(Gender,
+         Math_Score)%>% 
+  filter(Gender=="male")%>%
+  select(Math_Score)%>%
+  summarise(MATH_AVG = mean(Math_Score))
+
+StudentPerf %>% 
+  select(Gender,
+         Math_Score)%>% 
+  filter(Gender=="female")%>%
+  select(Math_Score)%>%
+  summarise(MATH_AVG = mean(Math_Score))
 
 # ข้อ 4
 # Code here
