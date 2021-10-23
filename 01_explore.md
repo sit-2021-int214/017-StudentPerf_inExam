@@ -138,13 +138,45 @@ $ Writing_Score               <int> 44, 70, 58, 72, 62, 34, 55, 48, 81, 54, 67, 
 เพศไหนทำคะแนนเฉลี่ยคณิตศาสตร์ได้มากกว่ากัน
 
 ```R
+StudentPerf %>% 
+  select(Gender,
+         Math_Score)%>% 
+  filter(Gender=="male")%>%
+  select(Math_Score)%>%
+  summarise(MATH_AVG = mean(Math_Score))
+
+StudentPerf %>% 
+  select(Gender,
+         Math_Score)%>% 
+  filter(Gender=="female")%>%
+  select(Math_Score)%>%
+  summarise(MATH_AVG = mean(Math_Score))
 
 ```
 
 ผลลัพธ์
 
 ```R
+StudentPerf %>% 
++   select(Gender,
++          Math_Score)%>% 
++   filter(Gender=="male")%>%
++   select(Math_Score)%>%
++   summarise(MATH_AVG = mean(Math_Score))
+  MATH_AVG
+1 68.72822
+> 
+> StudentPerf %>% 
++   select(Gender,
++          Math_Score)%>% 
++   filter(Gender=="female")%>%
++   select(Math_Score)%>%
++   summarise(MATH_AVG = mean(Math_Score))
+  MATH_AVG
+1  63.6332
+> 
 
+จาก out put แสดงให้เห็นว่าคะแนนเฉลี่ยคณิตศาสตร์ของเพศชายมากกว่าเพศหญิง
 ```
 
 ### ข้อ 4
