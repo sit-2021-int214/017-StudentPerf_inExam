@@ -107,15 +107,15 @@ $ Writing_Score               <int> 44, 70, 58, 72, 62, 34, 55, 48, 81, 54, 67, 
 
 ### ข้อ 1
 
-นักศึกษาเพศใดจบปริญญาตรีมากกว่ากัน
+นักเรียนเพศใดมีพ่อและแม่จบปริญญาตรีมากกว่ากัน
 
 ```R
-### หาจำนวนเพศชาย ที่จบปริญญาตรี
+### หาจำนวนนักเรียนเพศชาย ที่มีพ่อและแม่จบปริญญาตรี
 StudentPerf %>% 
   select(Gender, Parental_Level_of_Education) %>%
   count(Gender=='male' ,Parental_Level_of_Education=="bachelor's degree")
   
-### หาจำนวนเพศหญิง ที่จบปริญญาตรี
+### หาจำนวนนักเรียนเพศหญิง ที่มีพ่อและแม่จบปริญญาตรี
 StudentPerf %>% 
   select(Gender, Parental_Level_of_Education) %>%
   count(Gender=='female' ,Parental_Level_of_Education=="bachelor's degree")
@@ -125,7 +125,7 @@ StudentPerf %>%
 ผลลัพธ์
 
 ```R
-### Gender = male & Education = bachelor's degree
+### Gender = male & Parent's Education = bachelor's degree
 
 # A tibble: 4 x 3
   `Gender == "male"` `Parental_Level_of_Education ~     n
@@ -135,7 +135,7 @@ StudentPerf %>%
 3 TRUE               FALSE                            427
 4 TRUE               TRUE                              55
 
-### Gender = female & Education = bachelor's degree
+### Gender = female & Parent's Education = bachelor's degree
 
 # A tibble: 4 x 3
   `Gender == "female"` `Parental_Level_of_Educatio~     n
@@ -147,10 +147,10 @@ StudentPerf %>%
 
 ```
 จาก Output ข้างต้น แสดงให้เห็นว่า
-เพศชาย จบปริญญาตรีจำนวน 55 คน
-เพศหญิง จบปริญญาตรี 63 คน
+นักเรียนเพศชาย มีพ่อและแม่จบปริญญาตรีจำนวน 55 คน
+นักเรียนเพศหญิง มีพ่อและแม่จบปริญญาตรี 63 คน
 
-จึงสรุปได้ว่า เพศหญิง จบการศึกษาระดับปริญญาตรี มากกว่าเพศชาย
+จึงสรุปได้ว่า นักเรียนเพศหญิง มีพ่อและแม่จบการศึกษาระดับปริญญาตรีมากกว่านักเรียนเพศชาย
 
 ### ข้อ 2
 
