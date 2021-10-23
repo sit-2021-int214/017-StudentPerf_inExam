@@ -110,14 +110,47 @@ $ Writing_Score               <int> 44, 70, 58, 72, 62, 34, 55, 48, 81, 54, 67, 
 นักศึกษาเพศใดจบปริญญาตรีมากกว่ากัน
 
 ```R
+### หาจำนวนเพศชาย ที่จบปริญญาตรี
+StudentPerf %>% 
+  select(Gender, Parental_Level_of_Education) %>%
+  count(Gender=='male' ,Parental_Level_of_Education=="bachelor's degree")
+  
+### หาจำนวนเพศหญิง ที่จบปริญญาตรี
+StudentPerf %>% 
+  select(Gender, Parental_Level_of_Education) %>%
+  count(Gender=='female' ,Parental_Level_of_Education=="bachelor's degree")
 
 ```
 
 ผลลัพธ์
 
 ```R
+### Gender = male & Education = bachelor's degree
+
+# A tibble: 4 x 3
+  `Gender == "male"` `Parental_Level_of_Education ~     n
+  <lgl>              <lgl>                          <int>
+1 FALSE              FALSE                            455
+2 FALSE              TRUE                              63
+3 TRUE               FALSE                            427
+4 TRUE               TRUE                              55
+
+### Gender = female & Education = bachelor's degree
+
+# A tibble: 4 x 3
+  `Gender == "female"` `Parental_Level_of_Educatio~     n
+  <lgl>                <lgl>                        <int>
+1 FALSE                FALSE                          427
+2 FALSE                TRUE                            55
+3 TRUE                 FALSE                          455
+4 TRUE                 TRUE                            63
 
 ```
+จาก Output ข้างต้น แสดงให้เห็นว่า
+เพศชาย จบปริญญาตรีจำนวน 55 คน
+เพศหญิง จบปริญญาตรี 63 คน
+
+จึงสรุปได้ว่า เพศหญิง จบการศึกษาระดับปริญญาตรี มากกว่าเพศชาย
 
 ### ข้อ 2
 
