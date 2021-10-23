@@ -52,8 +52,10 @@
 
 - [safesit23/INT214-Statistics](https://github.com/safesit23/INT214-Statistics)
 - [R Studio Cheatsheets](https://www.rstudio.com/resources/cheatsheets)
+- [R Markdown](https://rmarkdown.rstudio.com)
 - [R Markdown CheatSheets](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
 - [Markdown Guide](https://www.markdownguide.org)
+- [R Documentation](https://www.rdocumentation.org)
 
 ## 👨‍🎓 About Us
 
