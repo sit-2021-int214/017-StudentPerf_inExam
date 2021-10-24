@@ -30,7 +30,7 @@ Superstore_Sales %>%
 
 # -----------------------------------------------------------------------------
 
-# ข้อ 1
+# ข้อ 3.1
 # สินค้าแต่ละประเภทมีจำนวนชนิดสินค้ารวมกันเท่าไร
 
 Cat_Count <- Superstore_Sales %>%
@@ -43,7 +43,7 @@ Cat_Count %>%
             Product = Sub.Category,
             Total = n) # Show result
 
-# ข้อ 2
+# ข้อ 3.2
 # สินค้าประเภท Technology มีสินค้าชนิดใดมากที่สุดโดยเรียงจากมากไปน้อย
 
 Tech_Most <- Superstore_Sales %>%
@@ -58,7 +58,7 @@ Tech_Most %>%
             Total = n) %>%
   arrange(desc(Total)) # Show result
 
-# ข้อ 3
+# ข้อ 3.3
 # สินค้าประเภทใดขายดีที่สุดในเดือนกันยายน ปี 2016 โดยเรียงจำนวนสินค้าจากมากไปน้อย
 
 year <- year(mdy(Superstore_Sales$Order.Date))
@@ -77,7 +77,7 @@ Most_2016 %>%
             Total = n) %>%
   arrange(desc(Total)) # Show result
 
-# ข้อ 4
+# ข้อ 3.4
 # สินค้าประเภท Furniture ผลิตภัณฑ์ใดมีจำนวนสินค้ามากที่สุดและมีจำนวนเท่าไร
 
 Total_Fur <- Superstore_Sales %>%
@@ -91,7 +91,7 @@ Total_Fur %>%
             Product = Product,
             Total = n) # Show result
 
-# ข้อ 5
+# ข้อ 3.5
 # องค์กรเลือกการจัดส่งสินค้าแบบใดมากที่สุด
 
 year <- year(mdy(Superstore_Sales$Order.Date))
@@ -105,7 +105,7 @@ Corporate_Ship2017 <- Superstore_Sales %>%
 
 summarise(Corporate_Ship2017, Total = n) # Show result
 
-# ข้อ 6
+# ข้อ 3.6
 # แสดงสินค้าที่ขายอยู่ใน New York City โดยให้แสดงเฉพาะ 10 รายการแรก
 
 NY_Product <- Superstore_Sales %>%
