@@ -127,4 +127,4 @@ ShipMode_Plot + ggtitle("Total of Shipping") + xlab("Ship Mode") + ylab("Ship Sa
 # กราฟจุดที่แสดงความสัมพันธ์ระหว่างประเภทสินค้าและชนิดสินค้า
 
 Category_Plot <- Superstore_Sales %>% ggplot(aes(x=Category, y=Sub.Category)) + geom_point()
-Category_Plot + ggtitle("Category of Product") + xlab("Category") + ylab("Product Type")
+Category_Plot + ggtitle("Category of Product") + xlab("Category") + ylab("Product")
