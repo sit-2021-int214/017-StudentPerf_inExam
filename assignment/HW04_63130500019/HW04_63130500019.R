@@ -31,37 +31,51 @@ Superstore_Sales %>%
 # -----------------------------------------------------------------------------
 
 # ข้อ 1
-# สินค้าแต่ละประเภทมีจำนวนรวมกันเท่าไร
+# สินค้าแต่ละประเภทมีจำนวนชนิดสินค้ารวมกันเท่าไร
 
 Cat_Count <- Superstore_Sales %>%
   group_by(Category) %>%
-  select(Category) %>%
-  count(Category)
+  select(Category, Sub.Category) %>%
+  count(Sub.Category)
 
-Cat_Count # Show result
+Cat_Count %>%
+  summarise(Category = Category,
+            Product = Sub.Category,
+            Total = n) # Show result
 
 # ข้อ 2
 # สินค้าประเภท Technology มีสินค้าชนิดใดมากที่สุดโดยเรียงจากมากไปน้อย
 
 Tech_Most <- Superstore_Sales %>%
-  group_by(Sub.Category) %>%
+  group_by(Product = Sub.Category) %>%
   select(Category, Sub.Category) %>%
   filter(Category == "Technology") %>%
-  count(Sub.Category)
-
-Tech_Most %>% arrange(desc(n)) # Show result
-
-# ข้อ 3
-# สินค้าประเภทใดขายดีที่สุดในปี 2016 โดยเรียงจำนวนสินค้าจากมากไปน้อย
-
-year <- year(mdy(Superstore_Sales$Order.Date))
-
-Most_2016 <- Superstore_Sales %>%
-  filter(year == 2016) %>%
-  group_by(Category) %>%
   count(Category)
 
-Most_2016 %>% arrange(desc(n)) # Show result
+Tech_Most %>%
+  summarise(Product = Product,
+            Category = Category,
+            Total = n) %>%
+  arrange(desc(Total)) # Show result
+
+# ข้อ 3
+# สินค้าประเภทใดขายดีที่สุดในเดือนกันยายน ปี 2016 โดยเรียงจำนวนสินค้าจากมากไปน้อย
+
+year <- year(mdy(Superstore_Sales$Order.Date))
+month <- month(mdy(Superstore_Sales$Order.Date))
+
+Most_2016 <- Superstore_Sales %>%
+  filter(year == 2016,
+         month == 9) %>%
+  group_by(Product = Sub.Category) %>%
+  select(Category, Sub.Category) %>%
+  count(Category)
+
+Most_2016 %>%
+  summarise(Product = Product,
+            Category = Category,
+            Total = n) %>%
+  arrange(desc(Total)) # Show result
 
 # ข้อ 4
 # สินค้าประเภท Furniture ผลิตภัณฑ์ใดมีจำนวนสินค้ามากที่สุดและมีจำนวนเท่าไร
@@ -72,7 +86,10 @@ Total_Fur <- Superstore_Sales %>%
   filter(Category == "Furniture") %>%
   count(Product = max(Product.Name))
 
-data.frame(Total_Fur) # Show result
+Total_Fur %>%
+  summarise(Category = Category,
+            Product = Product,
+            Total = n) # Show result
 
 # ข้อ 5
 # องค์กรเลือกการจัดส่งสินค้าแบบใดมากที่สุด
