@@ -56,7 +56,8 @@ Tech_Most <- Superstore_Sales %>%
 Tech_Most %>%
   summarise(Product = Product,
             Category = Category,
-            Total_Amount = sum(Superstore_Sales$Sales*n, na.rm = T)) %>%
+            Total_Amount = sum(Superstore_Sales$Sales*n, na.rm = T),
+            Currency = "USD") %>%
   arrange(desc(Total_Amount)) # Show result
 
 # ข้อ 3
@@ -75,7 +76,8 @@ Most_2016 <- Superstore_Sales %>%
 Most_2016 %>%
   summarise(Product = Product,
             Category = Category,
-            Total_Sale = sum(n*Superstore_Sales$Sales, na.rm = T)) %>%
+            Total_Sale = sum(n*Superstore_Sales$Sales, na.rm = T),
+            Currency = "USD") %>%
   arrange(desc(Total_Sale)) # Show result
 
 # ข้อ 4
