@@ -127,7 +127,14 @@ ShipMode_Plot <- Superstore_Sales %>% ggplot(aes(x=Ship.Mode)) + geom_bar()
 ShipMode_Plot + ggtitle("Total of Shipping") + xlab("Ship Mode") + ylab("Ship Sales")
 
 # ข้อ 4.2
-# กราฟจุดที่แสดงความสัมพันธ์ระหว่างประเภทสินค้าและชนิดสินค้า
+# แสดงกราฟจำนวนสินค้าของประเภทสินค้าแต่ละประเภทแบบ Pie Chart
 
-Category_Plot <- Superstore_Sales %>% ggplot(aes(x=Category, y=Sub.Category)) + geom_point()
-Category_Plot + ggtitle("Category of Product") + xlab("Category") + ylab("Product")
+Category_Plot <- data.frame(Superstore_Sales %>% count(Category))
+ggplot(Category_Plot, aes(x = "", y = n, fill = Category)) +
+  geom_col(color = "black") +
+  geom_text(aes(label = n),
+            position = position_stack(vjust = 0.5)) +
+  coord_polar(theta = "y") +
+  scale_fill_brewer() +
+  theme_void() +
+  ggtitle("Total of Product")
