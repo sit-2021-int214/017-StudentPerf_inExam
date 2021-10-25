@@ -30,8 +30,8 @@ Superstore_Sales %>%
 
 # -----------------------------------------------------------------------------
 
-# ข้อ 3.1
-# สินค้าแต่ละประเภทมีจำนวนชนิดสินค้ารวมกันเท่าไร
+# ข้อ 1
+# สินค้าแต่ละประเภทมีจำนวนชนิดสินค้ารวมกันเท่าไร โดยเรียงจากมากไปน้อย
 
 Cat_Count <- Superstore_Sales %>%
   group_by(Category) %>%
@@ -41,10 +41,11 @@ Cat_Count <- Superstore_Sales %>%
 Cat_Count %>%
   summarise(Category = Category,
             Product = Sub.Category,
-            Total = n) # Show result
+            Total = n) %>%
+  arrange(desc(Total)) # Show result
 
-# ข้อ 3.2
-# สินค้าประเภท Technology มีสินค้าชนิดใดมากที่สุดโดยเรียงจากมากไปน้อย
+# ข้อ 2
+# สินค้าประเภท Technology มีสินค้าชนิดใดที่มียอดรวมของราคามากที่สุด โดยเรียงจากมากไปน้อย
 
 Tech_Most <- Superstore_Sales %>%
   group_by(Product = Sub.Category) %>%
@@ -55,11 +56,11 @@ Tech_Most <- Superstore_Sales %>%
 Tech_Most %>%
   summarise(Product = Product,
             Category = Category,
-            Total = n) %>%
-  arrange(desc(Total)) # Show result
+            Total_Amount = sum(Superstore_Sales$Sales*n, na.rm = T)) %>%
+  arrange(desc(Total_Amount)) # Show result
 
-# ข้อ 3.3
-# สินค้าประเภทใดขายดีที่สุดในเดือนกันยายน ปี 2016 โดยเรียงจำนวนสินค้าจากมากไปน้อย
+# ข้อ 3
+# สินค้าประเภทใดมียอดขายดีที่สุดในเดือนกันยายน ปี 2016 โดยเรียงยอดขายจากมากไปน้อย
 
 year <- year(mdy(Superstore_Sales$Order.Date))
 month <- month(mdy(Superstore_Sales$Order.Date))
@@ -74,10 +75,10 @@ Most_2016 <- Superstore_Sales %>%
 Most_2016 %>%
   summarise(Product = Product,
             Category = Category,
-            Total = n) %>%
-  arrange(desc(Total)) # Show result
+            Total_Sale = sum(n*Superstore_Sales$Sales, na.rm = T)) %>%
+  arrange(desc(Total_Sale)) # Show result
 
-# ข้อ 3.4
+# ข้อ 4
 # สินค้าประเภท Furniture ผลิตภัณฑ์ใดมีจำนวนสินค้ามากที่สุดและมีจำนวนเท่าไร
 
 Total_Fur <- Superstore_Sales %>%
@@ -91,7 +92,7 @@ Total_Fur %>%
             Product = Product,
             Total = n) # Show result
 
-# ข้อ 3.5
+# ข้อ 5
 # องค์กรเลือกการจัดส่งสินค้าแบบใดมากที่สุด
 
 year <- year(mdy(Superstore_Sales$Order.Date))
@@ -105,7 +106,7 @@ Corporate_Ship2017 <- Superstore_Sales %>%
 
 summarise(Corporate_Ship2017, Total = n) # Show result
 
-# ข้อ 3.6
+# ข้อ 6
 # แสดงสินค้าที่ขายอยู่ใน New York City โดยให้แสดงเฉพาะ 10 รายการแรก
 
 NY_Product <- Superstore_Sales %>%
