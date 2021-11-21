@@ -34,21 +34,21 @@ $ Price           <dbl> 9.323529, 11.000000, 11.267647, 12.873529, 13.164706, 14
 
 ## Part 2: Learning function from Tidyverse &  Part 3: Transform data with dplyr and finding insight the data
 
-1. ค่าเฉลี่ยจำนวนหน้าของหนังสือมีทั้งหมดกี่หน้า
+# ค่าเฉลี่ยจำนวนหน้าของหนังสือมีทั้งหมดกี่หน้า
 
 Result:
 
 mean(com_book$Number_Of_Pages)
 [1] 475.0775
 
-2.เรตติ้งที่มีค่าเฉลี่ยเท่าไหร่
+# เรตติ้งที่มีค่าเฉลี่ยเท่าไหร่
 
 Result:
 
 mean(prog_book$Rating)
 [1] 4.067417
 
-3.หนังสือที่ชื่อว่า Joel on Software มี comment และ Rating เท่าไหร่
+# หนังสือที่ชื่อว่า Joel on Software มี comment และ Rating เท่าไหร่
 
 Result:
 
