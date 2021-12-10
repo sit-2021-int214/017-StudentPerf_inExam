@@ -8,7 +8,7 @@ Dataset: [Students Performance in Exams (Original)](https://github.com/sit-2021-
 # Pre-requisite
 install.packages("DescTools") # Descriptive statistics
 install.packages("MASS")      # Functions and datasets
-install.packages("dplyr")     # Data manipulation
+install.packages("dplyr")     # Data manipulation such as mutate, select, filter, etc.
 install.packages("readr")     # A fast and friendly way to read rectangular data
 install.packages("assertive") # Readable check functions to ensure code integrity
 install.packages("stringr")   # Character manipulation
@@ -119,7 +119,6 @@ StudentPerf %>%
 StudentPerf %>% 
   select(Gender, Parental_Level_of_Education) %>%
   count(Gender=='female' ,Parental_Level_of_Education=="bachelor's degree")
-
 ```
 
 ผลลัพธ์
@@ -144,11 +143,11 @@ StudentPerf %>%
 2 FALSE                TRUE                            55
 3 TRUE                 FALSE                          455
 4 TRUE                 TRUE                            63
-
 ```
+
 จาก Output ข้างต้น แสดงให้เห็นว่า\
 นักเรียนเพศชาย มีพ่อและแม่จบปริญญาตรีจำนวน 55 คน\
-นักเรียนเพศหญิง มีพ่อและแม่จบปริญญาตรี 63 คน\
+นักเรียนเพศหญิง มีพ่อและแม่จบปริญญาตรี 63 คน
 
 จึงสรุปได้ว่า นักเรียนเพศหญิง มีพ่อและแม่จบการศึกษาระดับปริญญาตรีมากกว่านักเรียนเพศชาย
 
@@ -160,9 +159,6 @@ StudentPerf %>%
 StudentPerf %>%
   select (Writing_Score) %>%
 filter(StudentPerf$Writing_Score == min(StudentPerf$Writing_Score))
-
-
-
 ```
 
 ผลลัพธ์
@@ -173,8 +169,8 @@ StudentPerf %>%
  filter(StudentPerf$Writing_Score == min(StudentPerf$Writing_Score))
   Writing_Score
 1            10
-
 ```
+
 คะแนนน้อยที่สุดของวิชา Writing คือ 10คะแนน
 
 ### ข้อ 3
@@ -195,7 +191,6 @@ StudentPerf %>%
   filter(Gender=="female")%>%
   select(Math_Score)%>%
   summarise(MATH_AVG = mean(Math_Score))
-
 ```
 
 ผลลัพธ์
@@ -218,9 +213,8 @@ StudentPerf %>%
    summarise(MATH_AVG = mean(Math_Score))
   MATH_AVG
 1  63.6332
- 
-
 ```
+
 จาก out put แสดงให้เห็นว่าคะแนนเฉลี่ยคณิตศาสตร์ของเพศชายมากกว่าเพศหญิง
 
 ### ข้อ 4
@@ -239,7 +233,6 @@ StudentPerf%>%
   select(Gender, Math_Score, Reading_Score, Writing_Score)%>%
   filter(StudentPerf$Gender=='female')%>%
   summarise(Math_AVG = mean(Math_Score), Reading_AVG = mean(Reading_Score), Writing_AVG = mean(Writing_Score))
-
 ```
 
 ผลลัพธ์
@@ -258,8 +251,8 @@ StudentPerf%>%
   Math_AVG Reading_AVG Writing_AVG
      <dbl>       <dbl>       <dbl>
 1     63.6        72.6        72.5
-
 ```
+
 จาก Output สรุปได้ว่า นักเรียนชายและนักเรียนหญิงมีคะแนนเฉลี่ยแต่ละวิชา ดังนี้\
 วิชาคณิตศาสตร์ นักเรียนชายมีคะแนนเฉลี่ยที่ 68.7 นักเรียนชายมีคะแนนเฉลี่ยที่ 63.6\
 วิชาการอ่าน นักเรียนชายมีคะแนนเฉลี่ยที่ 65.5 นักเรียนชายมีคะแนนเฉลี่ยที่ 72.6\

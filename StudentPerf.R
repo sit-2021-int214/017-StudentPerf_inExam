@@ -42,54 +42,58 @@ glimpse(StudentPerf)
 # Define Questions
 
 # ข้อ 1
+
 ### หาจำนวนนักเรียนเพศชาย ที่มีพ่อและแม่จบปริญญาตรี
-StudentPerf %>% 
+StudentPerf %>%
   select(Gender, Parental_Level_of_Education) %>%
   count(Gender=='male' ,Parental_Level_of_Education=="bachelor's degree")
-  
+
 ### หาจำนวนนักเรียนเพศหญิง ที่มีพ่อและแม่จบปริญญาตรี
-StudentPerf %>% 
+StudentPerf %>%
   select(Gender, Parental_Level_of_Education) %>%
   count(Gender=='female' ,Parental_Level_of_Education=="bachelor's degree")
 
-
+# --------------------------------------------------------------------------------------------------
 
 # ข้อ 2
 StudentPerf %>%
   select (Writing_Score) %>%
 filter(StudentPerf$Writing_Score == min(StudentPerf$Writing_Score))
 
-
+# --------------------------------------------------------------------------------------------------
 
 # ข้อ 3
-tudentPerf %>% 
+tudentPerf %>%
   select(Gender,
-         Math_Score)%>% 
+         Math_Score)%>%
   filter(Gender=="male")%>%
   select(Math_Score)%>%
   summarise(MATH_AVG = mean(Math_Score))
 
-StudentPerf %>% 
+StudentPerf %>%
   select(Gender,
-         Math_Score)%>% 
+         Math_Score)%>%
   filter(Gender=="female")%>%
   select(Math_Score)%>%
   summarise(MATH_AVG = mean(Math_Score))
 
+# --------------------------------------------------------------------------------------------------
+
 # ข้อ 4
+
 ### หาคะแนนเฉลี่ยในแต่ละวิชาของนักเรียนเพศชาย
 StudentPerf%>%
   select(Gender, Math_Score, Reading_Score, Writing_Score)%>%
   filter(StudentPerf$Gender=='male')%>%
   summarise(Math_AVG = mean(Math_Score), Reading_AVG = mean(Reading_Score), Writing_AVG = mean(Writing_Score))
-  
+
 ### หาคะแนนเฉลี่ยในแต่ละวิชาของนักเรียนเพศหญิง
 StudentPerf%>%
   select(Gender, Math_Score, Reading_Score, Writing_Score)%>%
   filter(StudentPerf$Gender=='female')%>%
   summarise(Math_AVG = mean(Math_Score), Reading_AVG = mean(Reading_Score), Writing_AVG = mean(Writing_Score))
 
-
+# --------------------------------------------------------------------------------------------------
 
 # ข้อ 5
 StudentPerf %>%
@@ -97,6 +101,8 @@ StudentPerf %>%
   summarise(MATH_AVG = mean(Math_Score),
             READING_AVG = mean(Reading_Score),
             WRITING_AVG = mean(Writing_Score))
+
+# --------------------------------------------------------------------------------------------------
 
 # ข้อ 6
 StudentPerf %>%
