@@ -1,6 +1,4 @@
-# Hypothesis testing of Students Performance in Exams
-
-is a method of statistical inference. An alternative hypothesis is proposed for the probability distribution of the data, either explicitly or only informally. The comparison of the two models is deemed statistically significant if, according to a threshold probability—the significance level—the data would be unlikely to occur if the null hypothesis were true. [Ref](https://en.wikipedia.org/wiki/Statistical_hypothesis_testing)
+# Hypothesis Testing of Students Performance in Exams
 
 ## Step to do
 
@@ -23,65 +21,115 @@ is a method of statistical inference. An alternative hypothesis is proposed for 
 5. Compare P-value with alpha or z/t with zalpha/talpha
 6. Conclusion
 
-### Example 1 (Ref: Chapter 9 Page 356)
+## Question
 
-The Federal Trade Commission (FTC) periodically conducts statistical studies designed to test the claims that manufacturers make about their products. For example, the label on a large can of Hilltop Coffee states that the can contains 3 pounds of coffee. Thus, the FTC interprets the label information on a large can of coffee as a claim by Hilltop that the population mean filling weight is at least 3 pounds per can. The director of the FTC’s testing program willing to risk a 1% chance of making such an error. Suppose a sample of 36 cans of coffee is selected and the population standard deviation can be assumed known with a value of σ = 0.18. Is x̄ = 2.92 pounds small enough to cause us to reject H0 ?
+จากข้อมูลที่ได้สำรวจทั้งหมด 1,000 ข้อมูล กลุ่มเราอยากทราบว่า ค่าเฉลี่ยของคะแนนหมวดคณิตศาสตร์จากจำนวนข้อมูล `100` ข้อมูล กลุ่มเราได้ตั้งสมมติฐานว่าคะแนนเฉลี่ยของหมวดคณิตศาสตร์มีคะแนนเฉลี่ยมากกว่า `66.08` คะแนน โดยที่คะแนนเฉลี่ยของหมวดคณิตศาสตร์ทั้งหมด `67.39` คะแนน จากการสุ่มตัวอย่างข้อมูล และมีส่วนเบี่ยงเบนมาตรฐาน `14.18` ซึ่งเรากำหนดค่า alpha เท่ากับ `0.05`
 
-Step 0: Assign variables
+**หมายเหตุ:** ตัวเลขที่นำไปใช้ในการคำนวนในโปรแกรม R Studio จะคำนวนทศนิยมได้มากกว่าสองตำแหน่ง ดังนั้นในโจทย์จะลดทอนทศนิยมให้เหลือสองตำแหน่งเพื่อให้ง่ายต่อการคำนวนและไม่รกตา
 
-```R
-n <-
-sd <-
-xbar <-
-u0 <-
-```
+### Step 0 : Assign variables
 
-Step 1: State the hypothesis
+#### Pre-requisites
 
 ```R
-#h0:   ,ha:
+# Install packages
+install.packages("dplyr") # Data manipulation such as mutate, select, filter, etc.
+install.packages("readr") # A fast and friendly way to read rectangular data
+
+# Use libraries
+library(dplyr)
+library(readr)
+
+# Dataset
+HypoTesting <- read.csv("https://raw.githubusercontent.com/sit-2021-int214/017-StudentPerf_inExam/main/StudentsPerformance_Clean.csv")
 ```
 
-Step 2: Level of significance
+#### Sample data
 
 ```R
-alpha <-
+# Sample data
+sample_100 <- HypoTesting %>% sample_n(100)
 ```
 
-Step 3: Test statistic
+#### Variables
 
 ```R
-z <- (xbar - u0) / (sd/sqrt(n));z
+# n
+n <- 100 # 100
+# mean
+xbar <- mean(sample_100$Math_Score) # 67.39
+# standard division
+sd <- sd(sample_100$Math_Score) # 14.18
+# mu0
+mu0 <- mean(HypoTesting$Math_Score) # 66.08
 ```
 
-Step 4: Finding P-value approach or Critical Value approach
+### Step 1 : State the hypothesis
+
+```R
+Ho : mu0 != 66.08
+Ha : mu0  = 66.08
+```
+
+### Step 2 : Level of significance
+
+```R
+alpha <- 0.05
+```
+
+### Step 3 : Test statistic
+
+```R
+z <- (xbar-mu0)/(sd/sqrt(n));
+z # 0.91
+```
+
+### Step 4 : Finding P-value approach or Critical Value approach
 
 ```R
 # P-value approach
-pvalue <- pnorm(z); pvalue
+pvalue <- pnorm(z);
+pvalue # 0.82
 
-# Critical Value approach
-zalpha <- qnorm(alpha);zalpha
+# Critical value approach
+zalpha <- qnorm(alpha);
+zalpha # -1.64
 ```
 
-Step 5: Compare
+### Step 5 : Compare P-value with alpha or z/t with zalpha/talpha
 
 ```R
-# Using p-value approach
+# Using P-value approach
+
+# Accept H0
 if(pvalue<=alpha){
   print("Reject H0")
-}else{
+} else {
   print("Accept H0")
 }
 
 # Using critical value
+
+# Accept H0
 if(z<=zalpha){
   print("Reject H0")
-}else{
+} else {
   print("Accept H0")
 }
 ```
 
-Step 6: Conclusion
+### Step 6 : Interval Estimation
 
-//Answer
+```R
+se_of_margin <- xbar/sqrt(n) # 6.73
+margin <- 1.96*se_of_margin # 13.20
+
+upper <- xbar+margin # 80.59
+lower <- xbar-margin # 54.18
+```
+
+ดังนั้น `54.18 < xbar (67.39) < 80.59`
+
+### Step 7 : Conclusion
+
+จากการทดสอบสมมุติฐานสรุปได้ว่า เป็นไปตามสมมุติฐานข้างต้นคือ คะแนนเฉลี่ยของหมวดคณิตศาสตร์ มีคะแนนเฉลี่ยมากกว่า `66.08` คะแนน

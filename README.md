@@ -1,7 +1,5 @@
 # 017-StudentPerf_inExam
 
-![Mr. Bean Crying](images/Readme_Masthead.gif)
-
 ที่มาชุดข้อมูล: [Kaggle](https://www.kaggle.com/spscientist/students-performance-in-exams)
 
 ## 📝 Overview
