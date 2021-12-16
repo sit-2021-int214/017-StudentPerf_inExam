@@ -28,8 +28,8 @@ mu0 <- mean(HypoTesting$Math_Score) # 66.089
 
 # Step 1 : State the hypothesis
 
-# Ho: mu0 != 66.089
-# Ha: mu0  = 66.089
+# Ho: mu0 >= 66.089
+# Ha: mu0  < 66.089
 
 #Step 2 : Level of significance
 
