@@ -39,7 +39,7 @@
 
 1. [Exploratory Data Analysis (MD)](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/01_explore.md)
 2. [Exploratory Data (R)](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/StudentPerf.R)
-3. [Hypothesis Tesing Analysis (MD)](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/02_hypothesis.md)
+3. [Hypothesis Testing Analysis (MD)](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/02_hypothesis.md)
 4. [Hypothesis Testing (R)](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/HypoTesting.R)
 5. [Data Visualization (MD)](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/03_data_visualization.md)
 
