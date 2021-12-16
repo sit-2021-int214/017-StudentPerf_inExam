@@ -74,7 +74,7 @@ Ha : mu0  < 66.08
 ### Step 2 : Level of significance
 
 ```R
-alpha <- 0.05
+alpha <- 0.05 # 0.05
 ```
 
 ### Step 3 : Test statistic

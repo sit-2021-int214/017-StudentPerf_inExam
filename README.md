@@ -38,18 +38,19 @@
 ## 📁 Table of Contents
 
 1. [Exploratory Data Analysis (MD)](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/01_explore.md)
-2. [Data Visualization (R)](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/StudentPerf.R)
+2. [Exploratory Data (R)](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/StudentPerf.R)
 3. [Hypothesis Tesing Analysis (MD)](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/02_hypothesis.md)
 4. [Hypothesis Testing (R)](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/HypoTesting.R)
+5. [Data Visualization (MD)](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/03_data_visualization.md)
 
 ## 📌 Resources
 
 ### Important Files in Repository
 
 - [StudentPerf.R](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/StudentPerf.R): Exploratory Data Analysis
+- [HypoTesting.R](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/HypoTesting.R): Hypothesis Tesing Analysis
 - [StudentsPerformance_Original.csv](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/StudentsPerformance_Original.csv): Original Dataset
 - [StudentsPerformance_Clean.csv](https://github.com/sit-2021-int214/017-StudentPerf_inExam/blob/main/StudentsPerformance_Clean.csv): Cleaned Dataset
-- รอการอัพเดท
 
 ### References
 
