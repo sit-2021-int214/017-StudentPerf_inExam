@@ -1,6 +1,6 @@
 # Data Visualization with Power BI
 
-Dashboard: [Power BI](https://app.powerbi.com/view?r=eyJrIjoiMzA2YTkyMTQtYzdiZC00YTQxLTljZDctNWVjOWIzZjJjNDBmIiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&pageName=ReportSection477c156ed02a353a3bb8)
+Dashboard: [Power BI](https://app.powerbi.com/view?r=eyJrIjoiNWQwZDMxZGQtOGRmMC00ZDJmLWIxNDYtNzU4NmY5Y2MzZDk4IiwidCI6IjZmNDQzMmRjLTIwZDItNDQxZC1iMWRiLWFjMzM4MGJhNjMzZCIsImMiOjEwfQ%3D%3D&pageName=ReportSection477c156ed02a353a3bb8)
 
 ## Average Score Summary 1
 
@@ -10,6 +10,6 @@ Dashboard: [Power BI](https://app.powerbi.com/view?r=eyJrIjoiMzA2YTkyMTQtYzdiZC0
 
 ## Average Score Summary 2
 
-![Data Visualization](images/bi_summary_2.png)
+![Data Visualization](images/bi_summary_2_v2.png)
 
 ค่าเฉลี่ยของของคะแนนการสอบหมวดคณิตศาสตร์ การอ่าน และการเขียน โดยอิงจากการเตรียมสอบ ค่าใช้จ่ายอาหารกลางวัน และเพศ
